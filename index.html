@@ -82,7 +82,37 @@
 
   </form>
 
-</section>
+  </section>
  
   </body>
+  <script>
+
+const SUPABASE_URL = "https://onnovsqelgftttfuejoy.supabase.co";
+const SUPABASE_ANON = "sb_publishable_EXqkrK3B1mHboiAvT18RIQ_c-XjfYMj";
+
+document.getElementById("contact-form")
+.addEventListener("submit", async function (event) {
+
+event.preventDefault();
+
+const name = document.getElementById("name").value.trim();
+const email = document.getElementById("email").value.trim();
+const message = document.getElementById("message").value.trim();
+
+const response = await fetch(
+`${SUPABASE_URL}/rest/v1/contact_messages`,
+{
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"apikey": SUPABASE_ANON,
+"Authorization": `Bearer ${SUPABASE_ANON}`
+},
+body: JSON.stringify({ name, email, message })
+}
+);
+
+});
+
+</script>
 </html>
