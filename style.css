@@ -112,3 +112,54 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* 项目板块 Grid 样式 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* 单个项目卡片 */
+.project-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.project-meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.project-links {
+  margin-top: 0.5rem;
+}
+
+.project-links a {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 0.75rem;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
