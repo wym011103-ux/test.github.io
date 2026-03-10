@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Wang Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <title>My First Website</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -53,7 +52,10 @@
       <section id="production-diary">
         <h2>Production Diary – Week 5</h2>
         <p><strong>Date:</strong> 13 February 2026</p>
-        <p>This week I worked on my GitHub Pages portfolio website...</p>
+        <p>This week I worked on my GitHub Pages portfolio website. I focused on creating or improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
+        <p>I am most happy with learning basic knowledge through practice. For example: creating a basic website that only has basic functions such as play video and audio could help me connect the foundations all together. It's really easy to memorize and review the knowledge this way.</p>
+        <p>I found it difficult to learn some abstract concepts, such as different types of image licenses and how they work. It is not only hard to understand the logic behind them, but I am also frequently interrupted by many technical terms.</p>
+        <p>Next time I want to improve my ability to understand abstract problems. I believe that using AI tools or asking professionals, such as tutors, for help will make it easier to solve problems that involve technical terms or complex concepts.</p>
       </section>
 
       <section id="contact">
@@ -63,16 +65,18 @@
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required placeholder="Jane Smith"/>
           </div>
+
           <div>
             <label for="email">Your Email</label>
             <input type="email" id="email" name="email" required placeholder="jane@example.com"/>
           </div>
+
           <div>
             <label for="message">Message</label>
             <textarea id="message" name="message" required placeholder="Say hello..." rows="5"></textarea>
           </div>
-          <button type="submit" class="button">Send Message</button>
-          <a href="cv.pdf" class="button-secondary">Download CV</a>
+
+          <a href="#" class="button" onclick="document.getElementById('contact-form').submit(); return false;">Send Message</a>
         </form>
         <p id="form-status"></p>
       </section>
@@ -85,9 +89,11 @@
 
       document.getElementById("contact-form").addEventListener("submit", async function (event) {
         event.preventDefault();
+
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
+
         const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
           method: "POST",
           headers: {
@@ -97,23 +103,13 @@
           },
           body: JSON.stringify({ name, email, message })
         });
+
         if(response.ok) {
           document.getElementById("form-status").textContent = "Message sent successfully!";
         } else {
           document.getElementById("form-status").textContent = "Failed to send message.";
         }
       });
-
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      sections.forEach(section => observer.observe(section));
     </script>
   </body>
 </html>
