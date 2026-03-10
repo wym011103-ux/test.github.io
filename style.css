@@ -24,3 +24,39 @@ body {
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }
+header {
+  padding: 1.5rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.site-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
