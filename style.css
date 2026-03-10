@@ -1,10 +1,9 @@
 :root {
-  --bg:          #f5f5f7;
-  --text:        #111827;
-  --accent:      #2563eb;
+  --bg: #f5f5f7;
+  --text: #111827;
+  --accent: #2563eb;
   --accent-soft: #dbeafe;
-  --font-base: system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", sans-serif;
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -19,11 +18,13 @@ body {
   background: var(--bg);
   line-height: 1.6;
 }
+
 .page-wrap {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }
+
 header {
   padding: 1.5rem 0 1rem;
   display: flex;
@@ -70,24 +71,20 @@ section:last-of-type {
   border-bottom: none;
 }
 
-
 section h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-
 
 section h2 {
   font-size: 1.4rem;
   margin-bottom: 0.75rem;
 }
 
-
 section p {
   max-width: 60ch;
   margin-bottom: 0.75rem;
 }
-
 
 .highlight {
   background: var(--accent-soft);
@@ -97,12 +94,10 @@ section p {
   margin-top: 1rem;
 }
 
-
 section ul {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
 }
-
 
 a {
   color: var(--accent);
@@ -112,7 +107,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
-/* 项目板块 Grid 样式 */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -120,7 +115,6 @@ a:hover {
   margin-top: 1.5rem;
 }
 
-/* 单个项目卡片 */
 .project-card {
   background: #ffffff;
   border-radius: 0.75rem;
@@ -162,4 +156,39 @@ a:hover {
 
 .project-links a:hover {
   text-decoration: underline;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.25);
+}
+
+.button:hover,
+.button:focus {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: none;
+  border: 1px solid var(--accent);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+  background: var(--accent-soft);
 }
