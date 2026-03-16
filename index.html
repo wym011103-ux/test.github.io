@@ -106,11 +106,9 @@
 
       document.getElementById("contact-form").addEventListener("submit", async function (event) {
         event.preventDefault();
-
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
-
         const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
           method: "POST",
           headers: {
@@ -120,27 +118,18 @@
           },
           body: JSON.stringify({ name, email, message })
         });
-
-        if(response.ok) {
-          document.getElementById("form-status").textContent = "Message sent successfully!";
-        } else {
-          document.getElementById("form-status").textContent = "Failed to send message.";
-        }
+        document.getElementById("form-status").textContent = response.ok ? "Message sent successfully!" : "Failed to send message.";
       });
 
-      // ===== Scroll reveal 动画（瀑布流延迟版） =====
+      // Scroll reveal
       const scrollElements = document.querySelectorAll('.scroll-reveal');
-
       function elementInView(el, offset = 100) {
-        const elementTop = el.getBoundingClientRect().top;
-        return elementTop <= (window.innerHeight - offset);
+        return el.getBoundingClientRect().top <= (window.innerHeight - offset);
       }
-
       function displayScrollElement(el, delay = 0) {
         el.style.transitionDelay = `${delay}s`;
         el.classList.add('visible');
       }
-
       function handleScroll() {
         let delayCounter = 0;
         scrollElements.forEach(el => {
@@ -151,7 +140,6 @@
           }
         });
       }
-
       window.addEventListener('scroll', handleScroll);
       window.addEventListener('resize', handleScroll);
       handleScroll();
