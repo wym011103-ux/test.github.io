@@ -89,33 +89,41 @@
       </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="scroll-reveal section">
-  <div class="section-content">
-    <h2>Get In Touch</h2>
-    <p>Feel free to send me a message.</p>
-    <form id="contact-form" class="contact-card scroll-reveal two-column">
-      <div class="form-left">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com" />
-        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-reveal section">
+      <div class="section-content">
+        <h2>Get In Touch</h2>
+        <p>Feel free to send me a message.</p>
+        <form id="contact-form" class="contact-card scroll-reveal two-column">
+          <div class="form-left">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+            </div>
+          </div>
+          <div class="form-right">
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Say hello..."></textarea>
+            </div>
+            <button type="submit" class="button">Send Message</button>
+          </div>
+
+          <!-- Success Overlay -->
+          <div id="success-overlay" class="contact-success-overlay">
+            <svg viewBox="0 0 52 52">
+              <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="success-check" fill="none" d="M14 27l7 7 16-16"/>
+            </svg>
+          </div>
+        </form>
       </div>
-      <div class="form-right">
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required placeholder="Say hello..."></textarea>
-        </div>
-        <button type="submit" class="button">Send Message</button>
-      </div>
-      <p id="form-status"></p>
-    </form>
+    </section>
   </div>
-</section>
 
   <!-- Scripts -->
   <script>
@@ -158,6 +166,27 @@
         e.preventDefault();
         document.querySelector(link.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
       });
+    });
+
+    // Contact form submission with overlay success animation
+    const form = document.getElementById("contact-form");
+    const overlay = document.getElementById("success-overlay");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // 模拟发送消息成功
+      setTimeout(() => {
+        overlay.classList.add("show");
+
+        // 2秒后隐藏 overlay
+        setTimeout(() => {
+          overlay.classList.remove("show");
+        }, 2000);
+
+        // 清空表单
+        form.reset();
+      }, 500);
     });
   </script>
 </body>
