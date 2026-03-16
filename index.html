@@ -9,7 +9,7 @@
   <body>
     <div class="page-wrap">
 
-      <header>
+      <header class="scroll-reveal">
         <div class="site-title">Joe Wang</div>
         <nav>
           <ul>
@@ -21,7 +21,7 @@
         </nav>
       </header>
 
-      <section id="about">
+      <section id="about" class="scroll-reveal">
         <h1>Welcome to My Website!</h1>
         <p>Hello! My name is Joe and this is my first website.</p>
         <h2>About Me</h2>
@@ -34,10 +34,10 @@
         </ul>
       </section>
 
-      <section id="projects">
+      <section id="projects" class="scroll-reveal">
         <h2>Projects</h2>
         <div class="projects-grid">
-          <article class="project-card">
+          <article class="project-card scroll-reveal">
             <div class="project-meta">Web App · 2026</div>
             <h3>My Portfolio Website</h3>
             <p>Built with HTML, CSS, and JS to showcase my personal projects and diary.</p>
@@ -46,10 +46,11 @@
               <a href="https://github.com/wym011103-ux">Profile</a>
             </div>
           </article>
+          <!-- 你可以复制更多 project-card 并保持 scroll-reveal 类 -->
         </div>
       </section>
 
-      <section id="production-diary">
+      <section id="production-diary" class="scroll-reveal">
         <h2>Production Diary – Week 5</h2>
         <p><strong>Date:</strong> 13 February 2026</p>
         <p>This week I worked on my GitHub Pages portfolio website. I focused on creating or improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
@@ -58,7 +59,7 @@
         <p>Next time I want to improve my ability to understand abstract problems. I believe that using AI tools or asking professionals, such as tutors, for help will make it easier to solve problems that involve technical terms or complex concepts.</p>
       </section>
 
-      <section id="contact">
+      <section id="contact" class="scroll-reveal">
         <h2>Get In Touch</h2>
         <form id="contact-form">
           <div>
@@ -110,6 +111,35 @@
           document.getElementById("form-status").textContent = "Failed to send message.";
         }
       });
+
+      // ===== Scroll reveal 动画 =====
+      const scrollElements = document.querySelectorAll('.scroll-reveal');
+
+      function elementInView(el, offset = 100) {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= (window.innerHeight - offset);
+      }
+
+      function displayScrollElement(el, index = 0) {
+        // 如果是 project-card, 设置递增延迟
+        if(el.classList.contains('project-card')) {
+          el.style.transitionDelay = `${index * 0.15}s`;
+        }
+        el.classList.add('visible');
+      }
+
+      function handleScroll() {
+        scrollElements.forEach((el, i) => {
+          if (elementInView(el, 100)) {
+            displayScrollElement(el, i);
+          }
+        });
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+      // 页面加载时检查一次
+      handleScroll();
     </script>
   </body>
 </html>
