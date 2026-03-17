@@ -129,16 +129,8 @@
   <script>
     // Scroll reveal
     const scrollElements = document.querySelectorAll(".scroll-reveal, .slide-left, .slide-right");
-
-    function elementInView(el, offset = 100) {
-      return el.getBoundingClientRect().top <= window.innerHeight - offset;
-    }
-
-    function displayScrollElement(el, delay = 0) {
-      el.style.transitionDelay = `${delay}s`;
-      el.classList.add("visible");
-    }
-
+    function elementInView(el, offset = 100) { return el.getBoundingClientRect().top <= window.innerHeight - offset; }
+    function displayScrollElement(el, delay = 0) { el.style.transitionDelay = `${delay}s`; el.classList.add("visible"); }
     function handleScroll() {
       let delayCounter = 0;
       scrollElements.forEach((el) => {
@@ -148,7 +140,6 @@
           if (el.classList.contains("project-card")) delayCounter++;
         }
       });
-
       const sections = document.querySelectorAll("section");
       const tocLinks = document.querySelectorAll(".toc-link");
       let scrollPos = window.scrollY + window.innerHeight / 3;
@@ -157,11 +148,9 @@
       tocLinks.forEach((link) => link.classList.remove("active"));
       tocLinks[currentIndex].classList.add("active");
     }
-
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
     handleScroll();
-
     document.querySelectorAll(".toc-link").forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -169,7 +158,7 @@
       });
     });
 
-    // Supabase contact form submission with overlay success animation
+    // Supabase contact form submission with debug
     const SUPABASE_URL = "https://onnovsqelgftttfuejoy.supabase.co";
     const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ubm92c3FlbGdmdHR0ZnVlam95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMTc4MjYsImV4cCI6MjA4ODU5MzgyNn0.m-VR_3SDChpcRRk901bHJ891EEA8m1fd4H5c-CQdLDE";
 
@@ -183,6 +172,8 @@
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
 
+      console.log("Sending:", { name, email, message });
+
       try {
         const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
           method: "POST",
@@ -195,12 +186,15 @@
           body: JSON.stringify({ name, email, message })
         });
 
+        console.log("status:", response.status);
+        console.log("response text:", await response.text());
+
         if (response.ok) {
           overlay.classList.add("show");
           setTimeout(() => overlay.classList.remove("show"), 2000);
           form.reset();
         } else {
-          alert("Failed to send message. Please try again.");
+          alert("Failed to send message. Please check console for details.");
         }
       } catch (error) {
         console.error("Error sending message:", error);
