@@ -52,25 +52,35 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="scroll-reveal section">
-      <div class="section-content">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <article class="project-card scroll-reveal">
-            <div class="project-meta">Web App · 2026</div>
-            <h3>My Portfolio Website</h3>
-            <p>Built with HTML, CSS, and JavaScript to showcase my projects and document my learning progress.</p>
-            <div class="project-links">
-              <a href="https://github.com/wym011103-ux/test.github.io">GitHub</a>
-              <a href="https://github.com/wym011103-ux">Profile</a>
+    <section id="projects" class="scroll-reveal section section-showcase">
+      <div class="section-content showcase-content">
+        <div class="section-header scroll-reveal">
+          <p class="section-eyebrow">Selected Work</p>
+          <h2 class="section-title-large">Projects</h2>
+          <p class="section-subtitle">A small collection of projects that reflect my learning progress, technical practice, and ongoing exploration in computer science.</p>
+        </div>
+
+        <div class="projects-showcase">
+          <article class="project-card featured-project scroll-reveal">
+            <div class="project-card-inner">
+              <div class="project-meta">Web App · 2026</div>
+              <h3>My Portfolio Website</h3>
+              <p>Built with HTML, CSS, and JavaScript to showcase my projects and document my learning progress.</p>
+              <div class="project-links">
+                <a href="https://github.com/wym011103-ux/test.github.io">GitHub</a>
+                <a href="https://github.com/wym011103-ux">Profile</a>
+              </div>
             </div>
           </article>
-          <article class="project-card scroll-reveal">
-            <div class="project-meta">Web App · 2025</div>
-            <h3>CS Maths & Tools</h3>
-            <p>A small collection of tools to practice computer science and mathematics concepts.</p>
-            <div class="project-links">
-              <a href="#">GitHub</a>
+
+          <article class="project-card standard-project scroll-reveal">
+            <div class="project-card-inner">
+              <div class="project-meta">Web App · 2025</div>
+              <h3>CS Maths &amp; Tools</h3>
+              <p>A small collection of tools to practice computer science and mathematics concepts.</p>
+              <div class="project-links">
+                <a href="#">GitHub</a>
+              </div>
             </div>
           </article>
         </div>
@@ -78,14 +88,33 @@
     </section>
 
     <!-- Production Diary -->
-    <section id="production-diary" class="scroll-reveal section">
-      <div class="section-content">
-        <h2>Production Diary – Week 5</h2>
-        <p><strong>Date:</strong> 13 February 2026</p>
-        <p>This week I worked on my GitHub Pages portfolio website. I focused on improving the main sections and organizing my learning materials.</p>
-        <p>Through building the site I realised that creating simple projects helps connect theoretical knowledge with practice.</p>
-        <p>However, I found some abstract concepts difficult, such as image licensing and related terminology.</p>
-        <p>Next time I want to improve my ability to understand technical concepts more efficiently.</p>
+    <section id="production-diary" class="scroll-reveal section section-journal">
+      <div class="section-content journal-section-content">
+        <article class="journal-card scroll-reveal">
+          <div class="journal-accent-bar"></div>
+
+          <div class="journal-card-body">
+            <div class="journal-header">
+              <span class="journal-date-tag">13 February 2026</span>
+              <h2 class="journal-title">Production Diary – Week 5</h2>
+            </div>
+
+            <div class="journal-content">
+              <div class="journal-block">
+                <p>This week I worked on my GitHub Pages portfolio website. I focused on improving the main sections and organizing my learning materials.</p>
+              </div>
+
+              <div class="journal-block">
+                <p>Through building the site I realised that creating simple projects helps connect theoretical knowledge with practice.</p>
+                <p>However, I found some abstract concepts difficult, such as image licensing and related terminology.</p>
+              </div>
+
+              <div class="journal-block">
+                <p>Next time I want to improve my ability to understand technical concepts more efficiently.</p>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -93,21 +122,31 @@
     <section id="contact" class="scroll-reveal section">
       <div class="section-content">
         <h2>Get In Touch</h2>
-        <p>Feel free to send me a message.</p>
+        <p>Feel free to send me a message about projects, ideas, or learning opportunities.</p>
 
-        <form id="contact-form" class="contact-card scroll-reveal two-column">
+        <form id="contact-form" class="contact-card scroll-reveal">
           <div class="form-left">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+            <div class="contact-intro">
+              <p class="contact-eyebrow">Contact</p>
+              <h3 class="contact-panel-title">Start a conversation</h3>
+              <p class="contact-panel-text">
+                Have a project, question, or idea? Feel free to reach out.
+                I’m always open to discussing learning, collaboration, and creative technical work.
+              </p>
             </div>
           </div>
 
           <div class="form-right">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+            </div>
+
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="6" required placeholder="Say hello..."></textarea>
@@ -119,9 +158,9 @@
 
           <!-- Success Overlay -->
           <div id="success-overlay" class="contact-success-overlay">
-            <svg viewBox="0 0 52 52">
-              <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
-              <path class="success-check" fill="none" d="M14 27l7 7 16-16"/>
+            <svg viewBox="0 0 52 52" aria-hidden="true">
+              <circle class="success-circle" cx="26" cy="26" r="25" fill="none"></circle>
+              <path class="success-check" fill="none" d="M14 27l7 7 16-16"></path>
             </svg>
           </div>
         </form>
