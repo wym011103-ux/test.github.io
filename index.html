@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
-</head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=2ok_BeaA4-2jJF1Jh0vGi81yPaO0PmQDUSQSIUcO0_blAPLxQSfvgFSRTbnyu247t968YLYxAO0xTr8a6ajyHN_3mg-wGI5vVHdVdxwK3sdQ0BxtPrXOwT01c9mOsOKBlRscmmphcDMyE-P9yP-wt5rw47xF8RRC89EP0LE-kXptnZg7oySzoemVNKDxHz_HIi0sBFnNWz9WJsQs4W0D5rERPjD2g4NFJgJfpcVoChzdJGegI_9WckyHy6bW9nLRL3UYiu4H9_dLBqcCHf2uaA" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=uo4yBhOrvbqShfV6Pv58ll8xMZrm7ePjJE5-VV9IHR-ShWSyW5JXx2qz2Car0K8XnPbiiVDnWZ930_mZi1kfgWfI0BMOro1yphRaz29--sEfsw14CKgFBtZCqXqqG6HHRKBKzJStBXIuS8EWe8hEF5GOLgCpQdKgulLmU9pJkZR2S1H-8v8bJcne9yeTG1A9qMJwyV9bQ6FVMCFQqcWXNybDh8nHYuG3erkogVvYedB3dsGq9QJgDe6Euoz4McS5bv9Ldoec-WCjwqv6dN7wmg" charset="UTF-8"></script></head>
 <body>
   <div class="page-wrap">
     <!-- Header -->
@@ -28,39 +28,55 @@
     <!-- About Section / Hero Banner -->
     <section id="about" class="scroll-reveal section about-hero-banner">
       <div class="about-hero-image">
-        <!-- Replace the image path below with your own banner image -->
-        <img src="images/about-banner.jpg" alt="Portrait banner of Joe Wang" class="about-banner-photo" />
+        <img src="images/about-banner.jpg" alt="Landscape banner of Joe Wang" class="about-banner-photo" loading="eager" decoding="async" />
       </div>
 
       <div class="about-hero-overlay"></div>
 
       <div class="about-hero-content">
+        <!-- Left Main Intro -->
         <div class="about-hero-text slide-left">
           <p class="about-eyebrow">About</p>
           <h1 class="hero-name hero-banner-name">Joe Wang</h1>
-          <p class="hero-subtitle hero-banner-subtitle">Computer Science Student · University of York</p>
-          <p class="hero-description hero-banner-description">
-            I build small tools, explore computer science concepts, and document my learning journey through projects and notes.
+          <p class="hero-subtitle hero-banner-subtitle">
+            Computer Science Student · University of York
           </p>
+          <p class="hero-description hero-banner-description">
+            I learn by building. This site is a record of the projects, notes,
+            and small experiments that help me turn computer science ideas into practical understanding.
+          </p>
+
           <div class="hero-buttons">
             <a href="#projects" class="button">View Projects</a>
             <a href="#contact" class="button secondary">Contact Me</a>
           </div>
         </div>
 
+        <!-- Right Lightweight Info Panel -->
         <div class="about-hero-card slide-right">
-          <h2 class="about-heading">About Me</h2>
-          <p>
-            I am currently studying Computer Science at the University of York. I enjoy building small tools, exploring programming concepts, and improving my problem-solving skills through practical projects.
-          </p>
+          <div class="about-summary-block">
+            <p class="about-card-label">Focus</p>
+            <p class="about-card-text">
+              Exploring programming, problem-solving, and technical creativity through small practical projects.
+            </p>
+          </div>
 
-          <h2 class="about-heading">My Interests</h2>
-          <ul>
-            <li>Web Development</li>
-            <li>Computer Science</li>
-            <li>Technology</li>
-            <li>Software Engineering</li>
-          </ul>
+          <div class="about-summary-block">
+            <p class="about-card-label">Current Path</p>
+            <p class="about-card-text">
+              Building a stronger foundation in computer science, web development, and software tools.
+            </p>
+          </div>
+
+          <div class="about-summary-block">
+            <p class="about-card-label">Interests</p>
+            <ul class="about-interest-list">
+              <li>Web Development</li>
+              <li>Computer Science</li>
+              <li>Technology</li>
+              <li>Software Engineering</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -77,11 +93,20 @@
         </div>
 
         <div class="projects-showcase">
-          <article class="project-card featured-project scroll-reveal">
-            <div class="project-card-inner">
+          <!-- Project Card 1 -->
+          <article class="project-card featured-project scroll-reveal stagger-reveal">
+            <div class="project-card-image">
+              <img src="images/project-portfolio-bg.jpg" alt="Background image for My Portfolio Website project" class="project-card-photo" loading="lazy" decoding="async" />
+            </div>
+
+            <div class="project-card-overlay"></div>
+
+            <div class="project-card-inner project-card-content">
               <div class="project-meta">Web App · 2026</div>
               <h3>My Portfolio Website</h3>
-              <p>Built with HTML, CSS, and JavaScript to showcase my projects and document my learning progress.</p>
+              <p>
+                Built with HTML, CSS, and JavaScript to showcase my projects and document my learning progress.
+              </p>
               <div class="project-links">
                 <a href="https://github.com/wym011103-ux/test.github.io">GitHub</a>
                 <a href="https://github.com/wym011103-ux">Profile</a>
@@ -89,11 +114,20 @@
             </div>
           </article>
 
-          <article class="project-card standard-project scroll-reveal">
-            <div class="project-card-inner">
+          <!-- Project Card 2 -->
+          <article class="project-card standard-project scroll-reveal stagger-reveal">
+            <div class="project-card-image">
+              <img src="images/project-tools-bg.jpg" alt="Background image for CS Maths and Tools project" class="project-card-photo" loading="lazy" decoding="async" />
+            </div>
+
+            <div class="project-card-overlay"></div>
+
+            <div class="project-card-inner project-card-content">
               <div class="project-meta">Web App · 2025</div>
               <h3>CS Maths &amp; Tools</h3>
-              <p>A small collection of tools to practice computer science and mathematics concepts.</p>
+              <p>
+                A small collection of tools to practice computer science and mathematics concepts.
+              </p>
               <div class="project-links">
                 <a href="#">GitHub</a>
               </div>
@@ -189,46 +223,65 @@
 
   <!-- Scripts -->
   <script>
-    const scrollElements = document.querySelectorAll(".scroll-reveal, .slide-left, .slide-right");
+    const revealElements = document.querySelectorAll(".scroll-reveal, .slide-left, .slide-right");
+    const tocLinks = document.querySelectorAll(".toc-link");
+    const sections = document.querySelectorAll("section[id]");
 
-    function elementInView(el, offset = 100) {
-      return el.getBoundingClientRect().top <= window.innerHeight - offset;
-    }
+    revealElements.forEach((el, index) => {
+      if (el.classList.contains("stagger-reveal")) {
+        el.style.setProperty("--reveal-delay", `${index * 0.12}s`);
+      }
+    });
 
-    function displayScrollElement(el, delay = 0) {
-      el.style.transitionDelay = `${delay}s`;
-      el.classList.add("visible");
-    }
-
-    function handleScroll() {
-      let delayCounter = 0;
-      scrollElements.forEach((el) => {
-        if (elementInView(el, 100) && !el.classList.contains("visible")) {
-          let delay = el.classList.contains("project-card") ? delayCounter * 0.15 : 0;
-          displayScrollElement(el, delay);
-          if (el.classList.contains("project-card")) delayCounter++;
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -8% 0px"
         }
-      });
+      );
 
-      const sections = document.querySelectorAll("section");
-      const tocLinks = document.querySelectorAll(".toc-link");
-      let scrollPos = window.scrollY + window.innerHeight / 3;
-      let currentIndex = 0;
-      sections.forEach((section, idx) => {
-        if (section.offsetTop <= scrollPos) currentIndex = idx;
-      });
-      tocLinks.forEach((link) => link.classList.remove("active"));
-      tocLinks[currentIndex].classList.add("active");
+      revealElements.forEach((el) => revealObserver.observe(el));
+
+      const tocObserver = new IntersectionObserver(
+        (entries) => {
+          const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+          if (!visibleEntries.length) return;
+
+          const currentSection = visibleEntries.sort(
+            (a, b) => b.intersectionRatio - a.intersectionRatio
+          )[0].target.id;
+
+          tocLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${currentSection}`);
+          });
+        },
+        {
+          threshold: [0.2, 0.45, 0.7],
+          rootMargin: "-20% 0px -45% 0px"
+        }
+      );
+
+      sections.forEach((section) => tocObserver.observe(section));
+    } else {
+      revealElements.forEach((el) => el.classList.add("visible"));
     }
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-
-    document.querySelectorAll(".toc-link").forEach((link) => {
+    tocLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
-        document.querySelector(link.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       });
     });
 
@@ -239,13 +292,19 @@
     const SUPABASE_URL = "https://onnovsqelgftttfuejoy.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ubm92c3FlbGdmdHR0ZnVlam95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMTc4MjYsImV4cCI6MjA4ODU5MzgyNn0.m-VR_3SDChpcRRk901bHJ891EEA8m1fd4H5c-CQdLDE";
 
-    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    // Contact form submission with Supabase insert
     const form = document.getElementById("contact-form");
     const overlay = document.getElementById("success-overlay");
     const statusText = document.getElementById("form-status");
     const submitButton = document.getElementById("submit-button");
+
+    const supabaseEnabled =
+      typeof window.supabase !== "undefined" &&
+      SUPABASE_URL.trim() !== "" &&
+      SUPABASE_ANON_KEY.trim() !== "";
+
+    const supabaseClient = supabaseEnabled
+      ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+      : null;
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -253,6 +312,13 @@
       statusText.textContent = "";
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
+
+      if (!supabaseClient) {
+        statusText.textContent = "Contact form is not configured yet.";
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+        return;
+      }
 
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
@@ -263,9 +329,9 @@
           .from("contact_messages")
           .insert([
             {
-              name: name,
-              email: email,
-              message: message
+              name,
+              email,
+              message
             }
           ]);
 
